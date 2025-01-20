@@ -161,8 +161,8 @@ public class GameManager : NetworkBehaviour
     {
         StartAreas.SetActive(true);
 
-        for (int i = 0; i < PLAYERS.Count; i++)
-            PLAYERS[i].PlayerObject.gameObject.GetComponent<Player>().Spawn(); //this should have been taken care of via a network variable for proper server authority - sadly, no time
+        //for (int i = 0; i < PLAYERS.Count; i++)
+        //    PLAYERS[i].PlayerObject.gameObject.GetComponent<Player>().Spawn(); //this should have been taken care of via a network variable for proper server authority - sadly, no time
 
         //NO WORKIE :((((
         //for (int i = 0; i < bulletSpawnerInst.GetComponent<ServerBulletSpawner>().currentBullets.Count; i++)

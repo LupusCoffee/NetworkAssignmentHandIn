@@ -23,6 +23,11 @@ public class Player : NetworkBehaviour
 
     private void Awake()
     {
+        health = maxHealth;
+    }
+
+    /*private void Awake()
+    {
         Spawn();
     }
 
@@ -32,7 +37,7 @@ public class Player : NetworkBehaviour
         health = maxHealth;
 
         print("spawn!");
-    }
+    }*/
 
     public void SetHealth(int value)
     {
