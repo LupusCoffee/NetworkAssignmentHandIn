@@ -376,6 +376,7 @@ GameObject:
   - component: {fileID: 3207732708260724231}
   - component: {fileID: 2752504713230801194}
   - component: {fileID: 5193591707510795912}
+  - component: {fileID: 3353632273890311088}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -651,6 +652,18 @@ MonoBehaviour:
     m_Bits: 64
   deflectionPoint: {fileID: 2757931499986730093}
   mousePosition: {fileID: -5630151704836100654, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+--- !u!114 &3353632273890311088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590149967447028541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8da2e979b1e8ed43bb73ae2b9b1e29f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6538732878844680130
 GameObject:
   m_ObjectHideFlags: 0

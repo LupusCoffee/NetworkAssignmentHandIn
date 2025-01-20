@@ -23,12 +23,12 @@ public class ServerBulletSpawner : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        if(!IsServer)
+        base.OnNetworkSpawn();
+        if (!IsServer)
         {
             enabled = false;
             return;
         }
-        base.OnNetworkSpawn();
     }
 
 

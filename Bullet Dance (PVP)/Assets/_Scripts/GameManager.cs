@@ -44,8 +44,6 @@ public class GameManager : NetworkBehaviour
 
         if (!IsServer) return;
 
-        print("server here!");
-
         NETWORK_MANAGER.OnClientConnectedCallback += PlayerJoined;
         NETWORK_MANAGER.OnClientDisconnectCallback += PlayerLeft;
         StartArea.onStartAreaOccupied += PlayerEnteredStartArea;
@@ -55,8 +53,6 @@ public class GameManager : NetworkBehaviour
     public override void OnNetworkDespawn()
     {
         if (!IsServer) return;
-
-        print("server here!");
 
         NETWORK_MANAGER.OnClientConnectedCallback -= PlayerJoined;
         NETWORK_MANAGER.OnClientDisconnectCallback -= PlayerLeft;

@@ -26,40 +26,17 @@ public class Player : NetworkBehaviour
         Spawn();
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.transform.CompareTag("Bullet"))
-        {
-            TakeDamageClientRpc(damageAmount);
-            DestroyBulletServerRpc(collision.gameObject.GetComponent<Bullet>());
-        }
-    }
-    [Rpc(SendTo.Server)]
-    private void DestroyBulletServerRpc(NetworkBehaviourReference bulletReference)
-    {
-        if (!bulletReference.TryGet<Bullet>(out Bullet bullet)) return;
-        bullet.GetComponent<NetworkObject>().Despawn();
-    }
-
     public void Spawn()
     {
         gameObject.SetActive(true);
         health = maxHealth;
     }
 
-    [Rpc(SendTo.ClientsAndHost)] //Should be server side!! i.e. send to server
-    private void TakeDamageClientRpc(int damage)
+    public void SetHealth(int value)
     {
-        health -= damage;
-        if (health <= 0) DeactivatePlayer();
+        health = value;
     }
-    private void DeactivatePlayer()
-    {
-        print(gameObject.name + " died!");
-        gameObject.SetActive(false);
-        onPlayerDeath?.Invoke();
-    }
+    public int GetHealth() { return health; }
 
     public void SetColor(Color newVal)
     {
