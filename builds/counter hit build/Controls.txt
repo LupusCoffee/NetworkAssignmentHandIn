@@ -1,0 +1,7 @@
+Movement - WASD
+
+Deflect - Right Click
+
+Emote1 - Q
+
+Emote2 - E
