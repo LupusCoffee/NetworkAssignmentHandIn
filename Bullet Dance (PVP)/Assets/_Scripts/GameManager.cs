@@ -80,14 +80,14 @@ public class GameManager : NetworkBehaviour
             ChangePlayerColorClientRpc(playerObj.GetComponent<Player>(), idCheck);
         }
     }
-    [Rpc(SendTo.ClientsAndHost)] //not important against cheating
+    [Rpc(SendTo.ClientsAndHost)] //not important against cheating, thus no proper server authority (also no time and lower priority)
     private void ChangePlayerNameClientRpc(NetworkBehaviourReference playerReference, ulong playerId)
     {
         if (playerReference.TryGet<Player>(out Player player))
             player.gameObject.name = "Player " + playerId;
         else print("didnt get player");
     }
-    [Rpc(SendTo.ClientsAndHost)] //not important against cheating
+    [Rpc(SendTo.ClientsAndHost)] //not important against cheating, thus no proper server authority (also no time and lower priority)
     private void ChangePlayerColorClientRpc(NetworkBehaviourReference playerReference, ulong idCheck)
     {
         if (!playerReference.TryGet<Player>(out Player player))
@@ -162,7 +162,7 @@ public class GameManager : NetworkBehaviour
         StartAreas.SetActive(true);
 
         for (int i = 0; i < PLAYERS.Count; i++)
-            PLAYERS[i].PlayerObject.gameObject.GetComponent<Player>().Spawn();
+            PLAYERS[i].PlayerObject.gameObject.GetComponent<Player>().Spawn(); //this should have been taken care of via a network variable for proper server authority - sadly, no time
 
         //NO WORKIE :((((
         //for (int i = 0; i < bulletSpawnerInst.GetComponent<ServerBulletSpawner>().currentBullets.Count; i++)

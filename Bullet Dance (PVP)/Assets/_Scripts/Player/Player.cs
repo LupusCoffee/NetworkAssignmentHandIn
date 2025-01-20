@@ -30,6 +30,8 @@ public class Player : NetworkBehaviour
     {
         gameObject.SetActive(true);
         health = maxHealth;
+
+        print("spawn!");
     }
 
     public void SetHealth(int value)

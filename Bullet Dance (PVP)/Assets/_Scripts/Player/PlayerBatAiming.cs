@@ -57,7 +57,7 @@ public class PlayerBatAiming : NetworkBehaviour
     }
 
     [Rpc(SendTo.ClientsAndHost)]
-    private void EmoteClientRpc(bool isEmote1)
+    private void EmoteClientRpc(bool isEmote1) //not important against cheating, thus no server authority (also no time and lower priority)
     {
         StartCoroutine(EmoteRoutine(isEmote1));
     }
